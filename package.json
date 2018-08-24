@@ -1,0 +1,32 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "Mern Demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && yarn start:prod || yarn start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn client\"",
+    "client": "cd client && yarn start",
+    "install": "cd client && yarn install",
+    "build": "cd client && yarn build",
+    "heroku-postbuild": "yarn build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "d3-geo": "^1.10.0",
+    "express": "^4.15.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.2.9",
+    "react-router-dom": "^4.3.1",
+    "react-simple-maps": "^0.12.1",
+    "topojson-client": "^3.0.0"
+  }
+}
